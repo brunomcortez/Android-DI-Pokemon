@@ -5,6 +5,8 @@ import com.brunocortez.pokemon.api.AuthInterceptor
 import com.brunocortez.pokemon.api.PokemonService
 import com.brunocortez.pokemon.repository.PokemonRepository
 import com.brunocortez.pokemon.repository.PokemonRepositoryImpl
+import com.brunocortez.pokemon.view.form.FormPokemonViewModel
+import com.brunocortez.pokemon.view.list.ListPokemonsAdapter
 import com.brunocortez.pokemon.view.list.ListPokemonsViewModel
 import com.brunocortez.pokemon.view.splash.SplashViewModel
 import com.facebook.stetho.okhttp3.StethoInterceptor
@@ -41,9 +43,14 @@ private fun createPicassoAuth(context: Context, client: OkHttpClient): Picasso {
         .build()
 }
 
+val viewModule = module {
+    factory { ListPokemonsAdapter(get()) }
+}
+
 val viewModelModule = module {
     viewModel { SplashViewModel(get()) }
     viewModel { ListPokemonsViewModel(get()) }
+    viewModel { FormPokemonViewModel(get()) }
 }
 val repositoryModule = module {
     single<PokemonRepository> { PokemonRepositoryImpl(get()) }

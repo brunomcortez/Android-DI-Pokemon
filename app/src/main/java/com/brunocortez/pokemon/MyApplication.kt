@@ -4,6 +4,7 @@ import android.app.Application
 import com.brunocortez.pokemon.di.networkModule
 import com.brunocortez.pokemon.di.repositoryModule
 import com.brunocortez.pokemon.di.viewModelModule
+import com.brunocortez.pokemon.di.viewModule
 import com.facebook.stetho.Stetho
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -24,6 +25,7 @@ class MyApplication : Application() {
             androidContext(this@MyApplication)
             modules(
                 listOf(
+                    viewModule,
                     viewModelModule,
                     repositoryModule,
                     networkModule
