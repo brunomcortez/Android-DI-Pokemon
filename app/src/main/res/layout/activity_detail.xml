@@ -26,10 +26,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <ImageView
+        <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:srcCompat="@drawable/charizard"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="loading_pokemon.json"
+            app:lottie_loop="true"
+                tools:srcCompat="@drawable/charizard"
                 android:id="@+id/ivPokemon"
                 android:layout_marginTop="8dp"
                 app:layout_constraintTop_toTopOf="@+id/guideline5"
@@ -78,7 +81,7 @@
         <TextView
                 android:fontFamily="@font/pokemon"
                 android:textColor="#FF5722"
-                android:text="006 Charizard"
+                tools:text="006 Charizard"
                 android:textSize="20sp"
                 app:autoSizeTextType="uniform"
                 app:autoSizeMinTextSize="12sp"
@@ -101,7 +104,7 @@
                 android:textSize="14sp"
                 android:maxLines="3"
                 android:ellipsize="end"
-                android:text="Charizard flies around the sky in search of powerful opponents. It breathes fire of such great heat that it melts anything. However, it never turns its fiery breath on any opponent weaker than itself."
+                tools:text="Charizard flies around the sky in search of powerful opponents. It breathes fire of such great heat that it melts anything. However, it never turns its fiery breath on any opponent weaker than itself."
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvPokemonDescription"
